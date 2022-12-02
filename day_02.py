@@ -7,9 +7,9 @@ fileContent = common.readFile(path)
 elf = ['A', 'B', 'C']
 me = ['X', 'Y', 'Z']
 
-score1 = 0  #score for part 1
+# Part 1
+score1 = 0  # score for part 1
 
-# part 1
 for line in fileContent:
     answers = line.split(' ')
     elfA = (elf.index(answers[0]) + 1) * 10
@@ -26,3 +26,20 @@ for line in fileContent:
 
 print(score1)
     
+# Part 2
+score2 = 0  # score for part 2
+toLose = [3, 1, 2]
+toWin = [2, 3, 1]
+
+for line in fileContent:
+    answers = line.split(' ')
+    elfA = elf.index(answers[0])
+
+    if (answers[1] == 'X'):  # lose
+        score2 += toLose[elfA]
+    elif (answers[1] == 'Y'):  # draw
+        score2 += (elfA + 1) + 3
+    else:  # win
+        score2 += 6 + toWin[elfA]
+
+print(score2)
