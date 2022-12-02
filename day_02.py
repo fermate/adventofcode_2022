@@ -26,7 +26,7 @@ for line in fileContent:
 
     score1 += meA
 
-print(score1)
+print(score1)   # Correct answer: 13809
     
 # Part 2
 score2 = 0  # score for part 2
@@ -44,4 +44,4 @@ for line in fileContent:
     else:  # win
         score2 += 6 + toWin[elfA]
 
-print(score2)
+print(score2)   # Correct answer: 12316

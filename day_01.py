@@ -28,7 +28,7 @@ elfs.append(calories)
 elfs.sort(reverse=True)
 
 #part 1 answer
-print(elfs[0])
+print(elfs[0])   # Correct answer: 74198
 
 #part 2 answer
-print(elfs[0] + elfs[1] + elfs[2])
+print(elfs[0] + elfs[1] + elfs[2])   # Correct answer: 209914
