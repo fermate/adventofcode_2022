@@ -1,3 +1,5 @@
+import numpy as np
+
 import common
 
 path = "inputs/day_02_input.txt"
@@ -12,14 +14,14 @@ score1 = 0  # score for part 1
 
 for line in fileContent:
     answers = line.split(' ')
-    elfA = (elf.index(answers[0]) + 1) * 10
+    elfA = elf.index(answers[0]) + 1
     meA = me.index(answers[1]) + 1
 
-    sum = elfA + meA
+    sum = elfA - meA
 
-    if (sum in [11, 22, 33]):
+    if (np.mod(sum, 3) == 0):
         score1 += 3
-    elif (sum in (12, 23, 31)):
+    elif (np.mod(sum, 3) == 2):
         score1 +=6
 
     score1 += meA
