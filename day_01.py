@@ -1,4 +1,3 @@
-import re
 import common
 
 path = "inputs/day_01_input.txt"
