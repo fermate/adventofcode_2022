@@ -1,7 +1,7 @@
 import re
 import common
 
-path = "inputs/day_1_input.txt"
+path = "inputs/day_01_input.txt"
 
 fileContent = common.readFile(path)
 
