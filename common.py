@@ -1,10 +1,11 @@
-def readFile(fileName):
+def readFile(fileName, toStrip = True):
     fileContent = []
     with open(fileName) as inputFile:
         fileContent = inputFile.readlines()
     
-    for i in range(len(fileContent)):
-        fileContent[i] = fileContent[i].rstrip()
+    if (toStrip):
+        for i in range(len(fileContent)):
+            fileContent[i] = fileContent[i].rstrip()
     
     return fileContent
 
