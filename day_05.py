@@ -46,7 +46,5 @@ for move in moves:
 result1 = result1.join([line[-1] for line in stacks1[1:]])
 result2 = result2.join([line[-1] for line in stacks2[1:]])
 
-print(stacks1)
-print(stacks2)
 print(result1)   # Correct answer: TLFGBZHCN
 print(result2)   # Correct answer: 
