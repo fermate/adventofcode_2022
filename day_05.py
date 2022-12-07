@@ -7,7 +7,7 @@ path = "inputs/day_05_input.txt"
 fileContent = common.readFile(path, False)
 
 result1 = ''  # result for part 1
-score2 = 0  # score for part 2
+result2 = ''  # result for part 2
 regex = 'move ([\d]*) from ([\d]*) to ([\d]*)'
 
 stackPart = fileContent[:fileContent.index('\n')]
@@ -23,23 +23,30 @@ for line in stackPart:
     if(line[0].isnumeric()):
         aa = ''
         pile = list(aa.join(line[1:]).rstrip())
-        stacks1.append(pile)
-        stacks2.append(pile)
+        stacks1.append(pile.copy())
+        stacks2.append(pile.copy())
 
 
-############
-# Part 1
 for move in moves:
     command = re.search(regex, move)
-    for _ in range(int(command.group(1))):
-        stacks1[int(command.group(3))].append(stacks1[int(command.group(2))].pop())
+    count = int(command.group(1))
+    fromStack = int(command.group(2))
+    toStack = int(command.group(3))
+    ############
+    # Part 1
+    for _ in range(count):
+        stacks1[toStack].append(stacks1[fromStack].pop())
+    
+    ############
+    # Part 2
+    stacks2[toStack].extend(stacks2[fromStack][-1 * count:])
+    del stacks2[fromStack][-1 * count:]
+
 
 result1 = result1.join([line[-1] for line in stacks1[1:]])
+result2 = result2.join([line[-1] for line in stacks2[1:]])
 
-
-############
-# Part 2
-
-
-print(result1)   # Correct answer: 
-print(score2)   # Correct answer: 
+print(stacks1)
+print(stacks2)
+print(result1)   # Correct answer: TLFGBZHCN
+print(result2)   # Correct answer: 
