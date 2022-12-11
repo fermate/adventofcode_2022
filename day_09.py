@@ -77,7 +77,7 @@ visitedCountPart2[0,0] = 1
 
 head = Point()
 tail = Point()
-long = [Point(), Point(), Point(), Point(), Point(), Point(), Point(), Point(), Point(), Point()]
+long = [Point()] * 10
 for line in fileContent:
     a = line.split(' ')
     
