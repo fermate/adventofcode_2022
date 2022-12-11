@@ -113,5 +113,5 @@ for line in fileContent:
 # end of for
 
 
-print(np.sum(visitedCountPart1))   # Correct answer: 5779
-print(np.sum(visitedCountPart2))   # Correct answer: 2331
+print(np.sum(visitedCountPart1))   # Correct answer part1: 5779
+print(np.sum(visitedCountPart2))   # Correct answer part2: 2331
